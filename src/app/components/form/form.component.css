@@ -33,3 +33,7 @@
     align-items: flex-start;
   }
 }
+
+#phone {
+  width: 49%;
+}

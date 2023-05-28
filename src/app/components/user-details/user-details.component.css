@@ -1,0 +1,13 @@
+.albums {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.album {
+  flex-basis: 16.6667%;
+  /* Adjust the width to fit multiple albums per row */
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+}
