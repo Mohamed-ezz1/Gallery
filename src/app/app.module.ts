@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { UsersPageComponent } from './components/users-page/users-page.component';
-import { AlbumsComponent } from './components/albums/albums.component';
 import { PhotosComponent } from './components/photos/photos.component';
 import { ErrorComponent } from './components/error/error.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,17 +16,20 @@ import { FormComponent } from './components/form/form.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     UsersPageComponent,
-    AlbumsComponent,
     PhotosComponent,
     ErrorComponent,
-    FormComponent
+    FormComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +43,10 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent],
