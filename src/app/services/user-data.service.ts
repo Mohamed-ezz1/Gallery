@@ -6,7 +6,7 @@ import { Observable, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class UserDataService {
-  // private users: any[] = [];
+  //This is a service to return the users and albums and photos
   constructor(private readonly myClient: HttpClient) { }
   private readonly Base_url = "http://jsonplaceholder.typicode.com/";
   GetAllUsers(): Observable<any> {
