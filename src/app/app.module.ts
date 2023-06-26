@@ -20,6 +20,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +32,8 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     PhotosComponent,
     ErrorComponent,
     FormComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,8 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
     MatInputModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

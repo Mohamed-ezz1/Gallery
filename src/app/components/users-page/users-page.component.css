@@ -1,45 +1,9 @@
-.example-spacer {
-  flex: 1 1 auto;
+#name {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
 }
 
-/* Default styling for the toolbar */
-.ms-5 {
-  margin-left: 5px;
+.header {
+  font-size: 20px;
 }
-
-.me-5 {
-  margin-right: 5px;
-}
-
-/* Media query for small screens */
-@media screen and (max-width: 600px) {
-  .ms-5 {
-    margin-left: 0;
-  }
-
-  .me-5 {
-    margin-right: 0;
-  }
-
-  .mat-toolbar {
-    flex-wrap: wrap;
-    height: auto;
-    min-height: 56px;
-    justify-content: center;
-  }
-
-  .ms-5,
-  .me-5 {
-    flex-grow: 1;
-    text-align: center;
-  }
-}
-
-/* .body {
-  max-width: 1248px;
-
-}
-
-.mat-form-field {
-  width: 100%;
-} */

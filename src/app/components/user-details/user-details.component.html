@@ -1,47 +1,54 @@
-<div class="container mt-5">
+<!--User details Toolbar-->
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-6 mx-auto">
-      <div class="card border-secondary mb-3">
-        <div class="card-header bg-secondary text-white">Student Details</div>
-        <div class="card-body" *ngIf="user; else falseBlock">
-          <ul class="list-group">
-            <li class="list-group-item">ID: {{ user.id }}</li>
-            <li class="list-group-item">Name: {{ user.name }}</li>
-            <li class="list-group-item">Age: {{ user.age }}</li>
-            <li class="list-group-item">Gender: {{ user.gender }}</li>
-            <li class="list-group-item">Email: {{ user.email }}</li>
-            <li class="list-group-item">
-              Address:
-              {{ user.address.suite + user.address.street + user.address.city }}
-            </li>
-          </ul>
+    <mat-toolbar color="primary">
+      <div class="field col-4" id="name">
+        <span class="value">{{ user?.name }}</span>
+      </div>
+      <div class="field col-4">
+        <div class="value" id="email">{{ user.email }}</div>
+        <div class="value" id="phone">{{ user.phone }}</div>
+      </div>
+      <div class="field col-4">
+        <div class="value" id="address">
+          {{
+            user.address.suite +
+              " " +
+              user.address.street +
+              " " +
+              user.address.city
+          }}
         </div>
       </div>
-      <ng-template #falseBlock>
-        <div class="d-flex justify-content-center">
-          <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
-          </div>
-        </div>
-      </ng-template>
-    </div>
+    </mat-toolbar>
   </div>
 </div>
 
-<div class="container">
+<!--Album Cards-->
+<div class="container mt-5" *ngIf="user && albums">
   <div class="row">
-    <div class="albums">
-      <div class="col-md-4" *ngFor="let album of albums">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">{{ album.title }}</h5>
-            <a [routerLink]="['/albums', album.id]" class="btn btn-primary"
-              >View Photos</a
-            >
+    <h1 style="text-align: center; color: rgba(253, 141, 13, 0.808)">
+      {{ user.name + "'s " + "Albums" }}
+    </h1>
+    <hr />
+    <div id="album-cards" class="col-lg-4" *ngFor="let album of albums">
+      <a [routerLink]="['/albums', album.id]" style="text-decoration: none">
+        <div id="card">
+          <div id="card-album">
+            <h5 style="text-align: center; font-size: 30px">
+              {{ "ALBUM" + " " + album.id }}
+            </h5>
+          </div>
+          <div id="card-photo">
+            <p style="color: black; font-weight: bold; font-size: 17px">
+              {{ photosCount }}
+            </p>
+            <p style="text-align: center; margin-bottom: 0; color: black">
+              Photos
+            </p>
           </div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </div>
-n

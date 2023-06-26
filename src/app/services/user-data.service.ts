@@ -19,17 +19,20 @@ export class UserDataService {
     return this.myClient.get(this.Base_url + "users/" + id);
   }
 
+
   GetAlbumsById(userId: number): Observable<any> {
-    return this.myClient.get(this.Base_url + 'users/' + userId + '/albums');
+    return this.myClient.get(this.Base_url + 'users/' + userId + '/albums').pipe(
+      tap((data: any) => console.log(data))
+    );
   }
 
-  GetPhotosByID(albumId: number): Observable<any> {
-    return this.myClient.get(this.Base_url + 'photos?albumId=' + albumId)
-      .pipe(
-        tap((data: any) => console.log(data))
-      );
+  GetPhotosByID(userId: number): Observable<any> {
+    return this.myClient.get(this.Base_url + 'photos?albumId=' + userId).pipe(
+      tap((data: any) => console.log(data))
+    );
   }
 
+  //Those methods would work if we are working with real API
   // AddUser(user: any) {
   //   console.log('Adding user:', user);
   //   return this.myClient.post(this.Base_url + "users/", user);
